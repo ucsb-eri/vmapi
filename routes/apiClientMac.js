@@ -7,14 +7,9 @@ var data = require(conf.dhcpMap);
 
 /* GET users listing. */
 router.get('/:client', function(req, res, next) {
-    var status = false;
-    var client = req.params.client;
-    if ( data.hasOwnProperty(client)){
-        res.send(data[client]);
-    }
-    else {
-        res.send('client: '+client+' not found');
-    }
+    var myResult = '';
+    if ( data.hasOwnProperty(req.params.client)) myResult = data[req.params.client];
+    res.send(myResult);
 });
 
 module.exports = router;
