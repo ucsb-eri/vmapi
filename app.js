@@ -18,11 +18,13 @@ if ( fileUtils.fileExists(CONF) == false ) {
     process.exit(0);
 }
 
-var routes = require('./routes/index');
 var apiClientDefined = require('./routes/apiClientDefined');
 var apiClientMac = require('./routes/apiClientMac');
 
 var app = express();
+// need to modify settings in ./bin/www
+//app.set('port',3001);
+//app.listen(3001);  // listen on 3001
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -30,13 +32,12 @@ app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
+app.use(logger('combined'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
 app.use('/api/clientDefined', apiClientDefined);
 app.use('/api/clientMac', apiClientMac);
 
@@ -54,10 +55,11 @@ app.use(function(req, res, next) {
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
-    });
+    res.send('DEV');
+    //res.render('error', {
+    //  message: err.message,
+    //  error: err
+    //});
   });
 }
 
@@ -65,10 +67,11 @@ if (app.get('env') === 'development') {
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
+  res.send('PROD');
+  //res.render('error', {
+  //  message: err.message,
+  //  error: {}
+  //});
 });
 
 
