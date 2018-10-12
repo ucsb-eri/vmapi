@@ -20,6 +20,7 @@ if ( fileUtils.fileExists(CONF) == false ) {
 
 var apiClientDefined = require('./routes/apiClientDefined');
 var apiClientMac = require('./routes/apiClientMac');
+var apiEthers2Host = require('./routes/apiEthers2Host');
 
 var app = express();
 // need to modify settings in ./bin/www
@@ -40,6 +41,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/clientDefined', apiClientDefined);
 app.use('/api/clientMac', apiClientMac);
+app.use('/api/ethers2host', apiEthers2Host);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
