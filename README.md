@@ -12,3 +12,6 @@ requires a config.json file that has the current object data keys:
 It is the users responsibility to create the dhcpMap file with their data.
 At ERI, the file is built by a simple filter script run at build time that converts
 the dhcpd.conf data into dhcpClients.json
+
+This has worked well so far.  As of 2018-10-11, trying to expand the functionality a bit.
+Will branch things to see how it goes.
