@@ -80,6 +80,6 @@ Note: ethers2host MAC address arguments need to be zero padded (might modify thi
 
 Can do basic fetches from api using wget or curl:
 ```
-wget -o /dev/null -O - http://localhost:3001/api/clientMac/loko
-wget -o /dev/null -O - http://localhost:3001/api/ethers2host/ac:1f:6b:05:85:24
+wget -o /dev/null -O - http://localhost:3004/api/clientMac/loko
+wget -o /dev/null -O - http://localhost:3004/api/ethers2host/ac:1f:6b:05:85:24
 ```
