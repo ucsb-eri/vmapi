@@ -15,3 +15,10 @@ the dhcpd.conf data into dhcpClients.json
 
 This has worked well so far.  As of 2018-10-11, trying to expand the functionality a bit.
 Will branch things to see how it goes.
+
+# Installation
+npm install nodemon -g
+npm install
+cp config-default.json config.json
+# edit config.json to point at the dhcpClient.json file
+npm start
