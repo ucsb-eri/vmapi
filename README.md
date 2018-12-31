@@ -1,4 +1,4 @@
-vmapi
+ # Introduction to vmapi
 
 Trying to set this up as an api for info for our VM hosts to query for 
 DHCP (and possibly DNS) information.  
@@ -36,7 +36,12 @@ npm start
 ```
 
 # Testing
-Note that ethers2host MAC addresses are zero padded.
+
+Note: clientMac returns MAC addresses that are NOT zero padded.
+
+Note: ethers2host MAC address arguments need to be zero padded (might modify this in the future to allow either).
+
+
 
 Can do basic fetches from api using wget or curl:
 ```
