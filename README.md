@@ -30,3 +30,7 @@ npm start
 ```
 
 # Testing
+```
+wget -o /dev/null -O - http://vmapi.eri.ucsb.edu:3002/api/clientMac/loko
+wget -o /dev/null -O - http://vmapi.eri.ucsb.edu:3002/api/ethers2host/ac:1f:6b:5:85:24
+```
