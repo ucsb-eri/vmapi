@@ -37,11 +37,12 @@ npm start
 
 ## Running as a systemd service
 ```
-[ -d /var/log/nodejs ] || mkdir /var/log/nodejs
+[ -d /var/log/nodejs ] || mkdir -p /var/log/nodejs
+[ -d /opt/lib/system ] || mkdir -p /opt/lib/system
 ```
 
 ```
-cat <<EOF >/tmp/vmapi.service     # change this path to a real service path
+cat <<EOF >/opt/lib/system/vmapi.service     # change this path to a real service path
 [Unit]
 Description=VMapi Server
 
