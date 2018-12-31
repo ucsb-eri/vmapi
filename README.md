@@ -26,12 +26,20 @@ npm install nodemon -g
 npm install
 cp config-default.json config.json
 # edit config.json to point at the dhcpClient.json file
+```
+
+# Running 
+Note that on newer systems, if '0.0.0.0' is not passed in on the listen call, node defaults to IPv6 only.
+
+```
 npm start
 ```
 
 # Testing
 Note that ethers2host MAC addresses are zero padded.
+
+Can do basic fetches from api using wget or curl:
 ```
-wget -o /dev/null -O - http://vmapi.eri.ucsb.edu:3002/api/clientMac/loko
-wget -o /dev/null -O - http://vmapi.eri.ucsb.edu:3002/api/ethers2host/ac:1f:6b:05:85:24
+wget -o /dev/null -O - http://localhost:3001/api/clientMac/loko
+wget -o /dev/null -O - http://localhost:3001/api/ethers2host/ac:1f:6b:05:85:24
 ```
