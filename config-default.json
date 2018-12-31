@@ -1,3 +1,4 @@
 {
-  "dhcpMap" : "/path/to/zone/files"
+  "dhcpMap" : "/path/to/zone/files/dhcpClients.json",
+  "ethers2hostMap" : "/path/to/zone/files/ethers2host.json"
 }
