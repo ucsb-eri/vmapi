@@ -62,6 +62,7 @@ Environment=NODE_ENV=production PORT=1337
 
 [Install]
 WantedBy=multi-user.target
+EOF
 ```
 
 # Testing
