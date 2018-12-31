@@ -55,9 +55,11 @@ Restart=always
 # Restart service after 10 seconds if node service crashes
 RestartSec=10
 # Output to syslog
-StandardOutput=file:/var/log/nodejs/vmapi.out
-StandardError=file:/var/log/nodejs/vmapi.err
-#SyslogIdentifier=nodejs-vmapi
+#StandardOutput=file:/var/log/nodejs/vmapi.out
+#StandardError=file:/var/log/nodejs/vmapi.err
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=vmapi
 #User=<alternate user>
 #Group=<alternate group>
 Environment=NODE_ENV=production PORT=3004
