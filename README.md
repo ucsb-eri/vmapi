@@ -54,9 +54,10 @@ WorkingDirectory=/opt/vmapi
 Restart=always
 # Restart service after 10 seconds if node service crashes
 RestartSec=10
-# Output to syslog
+# Output to a file, but the file is overwritten at service restart
 #StandardOutput=file:/var/log/nodejs/vmapi.out
 #StandardError=file:/var/log/nodejs/vmapi.err
+# Output to syslog
 StandardOutput=syslog
 StandardError=syslog
 SyslogIdentifier=vmapi
