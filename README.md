@@ -35,6 +35,31 @@ Note that on newer systems, if '0.0.0.0' is not passed in on the listen call, no
 npm start
 ```
 
+## Running as a systemd service
+```
+cat <<EOF >/tmp/vmapi.service.  # change this path to a real service path
+[Unit]
+Description=VMapi Server
+
+[Service]
+ExecStart=/usr/bin/npm start
+# Required on some systems
+WorkingDirectory=/opt/vmapi
+Restart=always
+# Restart service after 10 seconds if node service crashes
+RestartSec=10
+# Output to syslog
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=nodejs-vmapi
+#User=<alternate user>
+#Group=<alternate group>
+Environment=NODE_ENV=production PORT=1337
+
+[Install]
+WantedBy=multi-user.target
+```
+
 # Testing
 
 Note: clientMac returns MAC addresses that are NOT zero padded.
