@@ -30,7 +30,8 @@ npm start
 ```
 
 # Testing
+Note that ethers2host MAC addresses are zero padded.
 ```
 wget -o /dev/null -O - http://vmapi.eri.ucsb.edu:3002/api/clientMac/loko
-wget -o /dev/null -O - http://vmapi.eri.ucsb.edu:3002/api/ethers2host/ac:1f:6b:5:85:24
+wget -o /dev/null -O - http://vmapi.eri.ucsb.edu:3002/api/ethers2host/ac:1f:6b:05:85:24
 ```
