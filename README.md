@@ -17,7 +17,7 @@ the dhcpd.conf data into dhcpClients.json
 This has worked well so far.  As of 2018-10-11, expanded the functionality a bit to
 provide an ethers to host mapping functionality.
 
-Currently port is hardwired into the www script.
+Port number defaults to 3001, but can be controlled via the PORT env variable.
 
 
 # Installation
