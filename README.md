@@ -53,8 +53,8 @@ Restart=always
 # Restart service after 10 seconds if node service crashes
 RestartSec=10
 # Output to syslog
-StandardOutput=/var/log/nodejs
-StandardError=/var/log/nodejs
+StandardOutput=/var/log/nodejs/vmapi.out
+StandardError=/var/log/nodejs/vmapi.err
 #SyslogIdentifier=nodejs-vmapi
 #User=<alternate user>
 #Group=<alternate group>
