@@ -37,6 +37,10 @@ npm start
 
 ## Running as a systemd service
 ```
+[ -d /var/log/nodejs ] || mkdir /var/log/nodejs
+```
+
+```
 cat <<EOF >/tmp/vmapi.service.  # change this path to a real service path
 [Unit]
 Description=VMapi Server
@@ -49,9 +53,9 @@ Restart=always
 # Restart service after 10 seconds if node service crashes
 RestartSec=10
 # Output to syslog
-StandardOutput=syslog
-StandardError=syslog
-SyslogIdentifier=nodejs-vmapi
+StandardOutput=/var/log/nodejs
+StandardError=/var/log/nodejs
+#SyslogIdentifier=nodejs-vmapi
 #User=<alternate user>
 #Group=<alternate group>
 Environment=NODE_ENV=production PORT=1337
