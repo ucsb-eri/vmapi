@@ -58,7 +58,7 @@ StandardError=/var/log/nodejs/vmapi.err
 #SyslogIdentifier=nodejs-vmapi
 #User=<alternate user>
 #Group=<alternate group>
-Environment=NODE_ENV=production PORT=1337
+Environment=NODE_ENV=production PORT=3004
 
 [Install]
 WantedBy=multi-user.target
