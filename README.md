@@ -41,7 +41,7 @@ npm start
 ```
 
 ```
-cat <<EOF >/tmp/vmapi.service.  # change this path to a real service path
+cat <<EOF >/tmp/vmapi.service.     # change this path to a real service path
 [Unit]
 Description=VMapi Server
 
