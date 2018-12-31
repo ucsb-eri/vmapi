@@ -47,15 +47,16 @@ cat <<EOF >/opt/lib/system/vmapi.service     # change this path to a real servic
 Description=VMapi Server
 
 [Service]
-ExecStart=/usr/bin/npm start
+ExecStart=/usr/bin/nodemon /opt/vmapi/bin/www
+#/usr/bin/npm start
 # Required on some systems
 WorkingDirectory=/opt/vmapi
 Restart=always
 # Restart service after 10 seconds if node service crashes
 RestartSec=10
 # Output to syslog
-StandardOutput=/var/log/nodejs/vmapi.out
-StandardError=/var/log/nodejs/vmapi.err
+StandardOutput=file:/var/log/nodejs/vmapi.out
+StandardError=file:/var/log/nodejs/vmapi.err
 #SyslogIdentifier=nodejs-vmapi
 #User=<alternate user>
 #Group=<alternate group>
