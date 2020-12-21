@@ -17,7 +17,7 @@ the dhcpd.conf data into dhcpClients.json
 This has worked well so far.  As of 2018-10-11, expanded the functionality a bit to
 provide an ethers to host mapping functionality.
 
-Port number defaults to 3001, but can be controlled via the PORT env variable.
+Port number defaults to 3001, but can be controlled via the NODE_PORT env variable.
 
 
 # Installation
@@ -62,8 +62,10 @@ StandardOutput=syslog
 StandardError=syslog
 SyslogIdentifier=vmapi
 #User=<alternate user>
+User=nsmgmt
+Group=nsmgmt
 #Group=<alternate group>
-Environment=NODE_ENV=production PORT=3004
+Environment=NODE_ENV=production NODE_PORT=3004
 
 [Install]
 WantedBy=multi-user.target
